@@ -2,20 +2,20 @@ const Discord = require('discord.js');
 const moment = require("moment");
 const fs = require("fs");
 const client = new Discord.Client();
- const prefix = "-";
+ const prefix = "r";
 client.on('ready', () => {
     console.log('I am ready!');
 });
 
 client.on('ready', () => {
-    client.user.setActivity("-help || -inv ",{type: 'PLAYING'})
+    client.user.setActivity("-help || ",{type: 'PLAYING'})
 
 });
 
-var editedyaklaab = "-";
+prefix = "r";
 client.on('message', edddiiiittteeeddd => {
  
-  if (edddiiiittteeeddd.content ===  editedyaklaab + 'colors'){
+  if (edddiiiittteeeddd.content ===  prefix + 'colors'){
               if (!edddiiiittteeeddd.member.hasPermission('MANAGE_ROLES')) return edddiiiittteeeddd.channel.sendMessage(':radio_button: Hey! || You Don\'t Have Perms . ')
 	  edddiiiittteeeddd.channel.send('**Done || Create The Colors . :ballot_box_with_check: **')
                   setInterval(function(){})
@@ -39,7 +39,7 @@ client.on('message', async message => {
      category : 'click here',
       channel : 'click here'
        }
-        if(message.content.startsWith('-temp on')){
+        if(message.content.startsWith('rtemp on')){
          if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
           var ggg= message.guild.createChannel('click here', 'category').then(cg => {
            var ccc =message.guild.createChannel('click here', 'voice').then(ch => {
@@ -55,7 +55,7 @@ client.on('message', async message => {
                      });
                       const time = temp[message.guild.id].time
                        client.on('message' , message => {
-                        if (message.content.startsWith(prefix + "fgfdkjfdhfgdjghdhghj")) {
+                        if (message.content.startsWith(prefix + "newtime")) {
                          if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
                           let newTime= message.content.split(' ').slice(1).join(" ")
                           if(!newTime) return message.reply(`**${prefix}temptime <time>  \`1000 = 1s\`**`)
@@ -591,9 +591,9 @@ client.on('message',async message => {
 
 
   client.on('message', async message => {
-  if(message.content.startsWith(prefix + "bcall")) {
+  if(message.content.startsWith(prefix + "bfas")) {
     let i = client.users.size;
-    if(message.author.id !== '456641975932813345') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
+    if(message.author.id !== '483686172221243402') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
     var args = message.content.split(' ').slice(1).join(' ');
     if(!args) return message.channel.send('❎ » يجب عليك كتابة الرسالة')
     setTimeout(() => {
@@ -606,21 +606,6 @@ client.on('message',async message => {
 });
 
 
-
-  client.on('guildCreate', guild => {
-client.channels.get("480471610617233419").send(`:white_check_mark: **${client.user.tag} دخل سيرفر جديد
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`)
-});
-client.on('guildDelete', guild => {
-  client.channels.get("480471610617233419").send(`:negative_squared_cross_mark: **${client.user.tag} طلع من سيرفر
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__
-Server id: __${guild.id}__ 
-Server Count: __${guild.memberCount}__**`)
-});
   
 
 
@@ -685,7 +670,7 @@ client.on('message', message => {
     });
 
   client.on('message', message => {
-if(message.content.startsWith("-slots")) {
+if(message.content.startsWith("rslots")) {
   let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
@@ -701,7 +686,7 @@ if(message.content.startsWith("-slots")) {
 });
 
 client.on('message', message => {
-var prefix = "-";
+var prefix = "r";
 
     if (message.author.id === client.user.id) return;
     if (message.guild) {
@@ -736,7 +721,7 @@ message.channel.send(`MessageTaken: \`${Date.now() - message.createdTimestamp}\`
 
  client.on('message', message => {
         var  user = message.mentions.users.first() || message.author;
-    if (message.content.startsWith("-avatar")) {
+    if (message.content.startsWith("ravatar")) {
 message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 }
 });
@@ -898,19 +883,6 @@ message.channel.send(`**Done || ${user.tag} Banned . :ballot_box_with_check: **`
 
 }
 });
-
- client.on('message' , message => {
-
-    if (message.content === "-inv") {
-        if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**')
-     const embed = new Discord.RichEmbed()
- .setColor("RANDOM")
- .setThumbnail(client.user.avatarURL)
-.setTitle('Click Here .')
-.setURL('https://discordapp.com/oauth2/authorize?client_id=477008338048253983&permissions=8&scope=bot')
-  message.channel.sendEmbed(embed);
-   }
-}); 
 
 
 
